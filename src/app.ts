@@ -56,10 +56,13 @@ category – категорія
 Функція assistCustomer, яка повинна приймати два рядкові параметри custName і bookTitle і нічого не повертати.
  */
 enum Category {
-    JavaScript = 0,
-    TypeScript = 1,
-    CSS = 2,
+    JavaScript,
+    CSS,
+    HTML,
+    TypeScript,
+    Angular
 }
+
 interface Book {
     id: number;
     title: string;
@@ -70,16 +73,11 @@ interface Book {
     markDamaged?: DamageLogger;
 }
 
+
 function printBook(book: Book): void {
     console.log(`${book.title} by ${book.author}`)
 }
 
-/*
-interface Book {
-    year: number;
-    copies: number;
-}
- */
 const myBook: Book = {
     id: 5,
     title: 'Colors, Backgrounds, and Gradients',
@@ -91,6 +89,7 @@ const myBook: Book = {
         console.log(`Damaged: ${label}`)
     }
 }
+
 printBook(myBook);
 
 myBook.markDamaged?.("missing back cover");
